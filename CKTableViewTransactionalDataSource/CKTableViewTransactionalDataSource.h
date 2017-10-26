@@ -42,12 +42,12 @@
  *
  *	@param tableView The tableView is held strongly and its datasource property will be set to the receiver.
  *	@param supplementaryDataSource	UITableViewDataSource subset methods from CKTableViewSupplementaryDataSource will be forwarded to this object. Weak reference.
- *	@param configuration see CKTransactionalComponentDataSourceConfiguration.
+ *	@param configuration see CKDataSourceConfiguration.
  *	@param cellConfiguration Initial cell configuration instance, or nil.
  */
 - (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView
           supplementaryDataSource:(nullable NSObject <CKTableViewSupplementaryDataSource> *)supplementaryDataSource
-                    configuration:(nonnull CKTransactionalComponentDataSourceConfiguration *)configuration
+                    configuration:(nonnull CKDataSourceConfiguration *)configuration
          defaultCellConfiguration:(nullable CKTableViewCellConfiguration *)cellConfiguration NS_DESIGNATED_INITIALIZER;
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
@@ -59,14 +59,14 @@
 
  @param cellConfiguration	A cell configuration object to use during this update.
  */
-- (void)applyChangeset:(nonnull CKTransactionalComponentDataSourceChangeset *)changeset
+- (void)applyChangeset:(nonnull CKDataSourceChangeset *)changeset
                   mode:(CKUpdateMode)mode
      cellConfiguration:(nullable CKTableViewCellConfiguration *)cellConfiguration;
 
-- (void)applyChangeset:(nonnull CKTransactionalComponentDataSourceChangeset *)changeset
+- (void)applyChangeset:(nonnull CKDataSourceChangeset *)changeset
                   mode:(CKUpdateMode)mode;
 
-- (void)applyChangeset:(nonnull CKTransactionalComponentDataSourceChangeset *)changeset
+- (void)applyChangeset:(nonnull CKDataSourceChangeset *)changeset
                   mode:(CKUpdateMode)mode
               userInfo:(nullable NSDictionary *)userInfo;
 
@@ -95,7 +95,7 @@
 
  @param cellConfiguration	A cell configuration object to use during this update.
  */
-- (void)updateConfiguration:(nonnull CKTransactionalComponentDataSourceConfiguration *)configuration
+- (void)updateConfiguration:(nonnull CKDataSourceConfiguration *)configuration
                        mode:(CKUpdateMode)mode
           cellConfiguration:(nullable CKTableViewCellConfiguration *)cellConfiguration;
 
